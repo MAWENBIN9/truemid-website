@@ -603,7 +603,9 @@ footer a:hover{color:var(--white)}
     </div>
 
     <!-- Formspree form - TODO: replace FORM_ID with your actual Formspree ID after registering at formspree.io -->
-    <form class="fade-in" id="quoteForm" action="https://formspree.io/f/FORM_ID" method="POST">
+    <form class="fade-in" id="quoteForm" action="https://formspree.io/f/xpqgyjwa" method="POST">
+      <input type="hidden" name="_next" value="https://mawenbin9.github.io/truemid-website/?submitted=true">
+      <input type="hidden" name="_subject" value="New Quote Request - TrueMid Manufacturing">
       <div class="form-group">
         <label for="name">Your Name *</label>
         <input type="text" id="name" name="name" required placeholder="John Smith">
@@ -679,26 +681,13 @@ footer a:hover{color:var(--white)}
 
 <!-- ===== SCRIPTS ===== -->
 
-<!-- Google Analytics (GA4) - TODO: replace G-XXXXXXXXXX with your Measurement ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Analytics (GA4) - TODO: replace G-CENSR6CBB0 with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CENSR6CBB0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-
-<!-- Tawk.to Live Chat - TODO: replace YOUR_PROPERTY_ID with your actual Tawk.to ID -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  gtag('config', 'G-CENSR6CBB0');
 </script>
 
 <script>
@@ -752,6 +741,20 @@ function toggleFaq(el) {
 const barObserver=new IntersectionObserver((e)=>{e.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.cap-bar-fill').forEach(b=>{b.style.width=b.style.width});barObserver.unobserve(e.target)}})},{threshold:0.3});
 document.querySelector('.capabilities .container')&&barObserver.observe(document.querySelector('.capabilities .container'));
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a452f92b539ed1d4853c4e3/1jsf43lb2';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
 </body>
 </html>
