@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TrueMid &mdash; Precision Prototyping & Manufacturing | 3D Printing &middot; CNC &middot; Injection Molding</title>
-<meta name="description" content="TrueMid delivers precision 3D printing, CNC machining, vacuum casting, and injection molding services. We handle the complex jobs others can't. Fast global shipping from China.">
+<title>TrueMid Manufacturing &mdash; Precision Prototyping & Manufacturing | 3D Printing &middot; CNC &middot; Injection Molding</title>
+<meta name="description" content="TrueMid Manufacturing delivers precision 3D printing, CNC machining, vacuum casting, and injection molding services. We handle complex jobs others can't. Fast global shipping from China.">
+<!-- Open Graph / LinkedIn -->
+<meta property="og:title" content="TrueMid Manufacturing &mdash; Precision Prototyping & Manufacturing">
+<meta property="og:description" content="3D printing, CNC machining, vacuum casting, and injection molding. Fast global shipping from China. Get a quote in 24 hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mawenbin9.github.io/truemid-website/">
+<meta property="og:image" content="https://mawenbin9.github.io/truemid-website/images/factory.jpg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TrueMid Manufacturing &mdash; Precision Prototyping">
+<meta name="twitter:description" content="3D printing, CNC machining, vacuum casting. Fast global shipping from China.">
+<meta name="twitter:image" content="https://mawenbin9.github.io/truemid-website/images/factory.jpg">
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
 <style>
 /* ===== CSS Reset & Variables ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -144,15 +157,30 @@ nav .btn{padding:.55rem 1.3rem;font-size:.85rem}
 .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,95,163,.1)}
 .form-group textarea{min-height:120px;resize:vertical}
 
+/* ===== FAQ ===== */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--gray-100);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.faq-q{background:var(--gray-50);padding:1rem 1.5rem;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+.faq-q:hover{background:var(--blue-pale)}
+.faq-q .arrow{transition:transform .3s;font-size:.8rem}
+.faq-q.active .arrow{transform:rotate(180deg)}
+.faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:all .3s ease;color:var(--gray-700);font-size:.95rem}
+.faq-a.open{padding:1rem 1.5rem;max-height:300px}
+
+/* ===== WhatsApp Float ===== */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;align-items:center;gap:.6rem;background:#25D366;color:white;padding:.8rem 1.3rem;border-radius:50px;box-shadow:0 4px 16px rgba(37,211,102,.35);text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .2s}
+.wa-float:hover{transform:scale(1.05);color:white}
+.wa-float .wa-icon{font-size:1.5rem}
+
 /* ===== Footer ===== */
 footer{background:var(--gray-900);color:rgba(255,255,255,.65);padding:3rem 0 2rem;font-size:.9rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
 footer h4{color:var(--white);margin-bottom:1rem;font-size:.95rem}
 footer a{color:rgba(255,255,255,.5)}
 footer a:hover{color:var(--white)}
-footer .logo{color:var(--white);margin-bottom:.8rem}
-footer .logo .logo-icon{background:var(--blue-light)}
 .footer-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:.8rem;color:rgba(255,255,255,.35)}
+.footer-legal{margin-top:.5rem}
+.footer-legal a{font-size:.8rem;margin:0 .5rem}
 
 /* ===== Toast ===== */
 .toast{position:fixed;bottom:2rem;right:2rem;background:var(--gray-900);color:var(--white);padding:1rem 1.5rem;border-radius:var(--radius);font-weight:600;z-index:999;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none}
@@ -169,6 +197,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
   .hero-stats{gap:1.5rem}
   .footer-grid{grid-template-columns:1fr}
   .cap-label{min-width:70px;font-size:.8rem}
+  .wa-float{bottom:1rem;right:1rem;padding:.6rem 1rem;font-size:.85rem}
 }
 @media(max-width:480px){
   .steps{grid-template-columns:1fr}
@@ -183,12 +212,17 @@ footer .logo .logo-icon{background:var(--blue-light)}
 </head>
 <body>
 
+<!-- ===== WhatsApp Floating Button ===== -->
+<a href="https://wa.me/8615291861855" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-icon">&#128172;</span> WhatsApp
+</a>
+
 <!-- ===== HEADER ===== -->
 <header id="header">
 <div class="header-inner">
   <a href="#" class="logo">
-    <span class="logo-icon">T</span>
-    TrueMid
+    <span class="logo-icon">TM</span>
+    TrueMid Manufacturing
   </a>
   <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -197,6 +231,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
     <a href="#services">Services</a>
     <a href="#cases">Cases</a>
     <a href="#how">How It Works</a>
+    <a href="#faq">FAQ</a>
     <a href="#about">About</a>
     <a href="#contact" class="btn btn-primary">Get a Quote</a>
   </nav>
@@ -210,8 +245,8 @@ footer .logo .logo-icon{background:var(--blue-light)}
     <h1><span class="accent">Precision Prototyping &amp; Manufacturing</span>
     We Make the Parts Others Can't.</h1>
     <p>From a single prototype to 10,000 production units &mdash; 3D printing, CNC machining, vacuum casting, and injection molding. Delivered to your door in as fast as 5 days.</p>
-    <a href="#contact" class="btn btn-orange">Request a Quote &rarr;/a>
-    <a href="#cases" class="btn btn-white" style="margin-left:.5rem">View Our Work</a>
+    <a href="#contact" class="btn btn-orange">Request a Quote &rarr;</a>
+    <a href="https://wa.me/8615291861855" class="btn btn-white" style="margin-left:.5rem" target="_blank" rel="noopener">WhatsApp Us</a>
   </div>
   <div class="hero-stats fade-in">
     <div class="hero-stat"><div class="num">10+</div><div class="label">Manufacturing Processes</div></div>
@@ -308,7 +343,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
 <section class="capabilities">
 <div class="container">
   <span class="section-label">Our Edge</span>
-  <h2 class="section-title">Why Engineers Choose TrueMid</h2>
+  <h2 class="section-title">Why Engineers Choose TrueMid Manufacturing</h2>
   <p class="section-sub">We don't just run machines &mdash; we solve manufacturing problems.</p>
 
   <div class="cap-row fade-in">
@@ -350,7 +385,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
 
     <div class="case-card fade-in">
       <div class="case-img">
-        <img src="images/case-sla.jpg" alt="SLA Resin Prototype - Medical Device Housing" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/case-sla.jpg" alt="SLA Resin Prototype - Medical Device Housing" loading="lazy">
       </div>
       <div class="case-body">
         <span class="tag">SLA Printing</span>
@@ -361,7 +396,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
 
     <div class="case-card fade-in">
       <div class="case-img">
-        <img src="images/case-cnc.jpg" alt="CNC Aluminum Parts - Aerospace Bracket" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/case-cnc.jpg" alt="CNC Aluminum Parts - Aerospace Bracket" loading="lazy">
       </div>
       <div class="case-body">
         <span class="tag">CNC Machining</span>
@@ -372,18 +407,18 @@ footer .logo .logo-icon{background:var(--blue-light)}
 
     <div class="case-card fade-in">
       <div class="case-img">
-        <img src="images/case-vacuum.jpg" alt="Urethane Casting - Robot Gripper Parts" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/case-vacuum.jpg" alt="Vacuum Casting - Electronics Housing" loading="lazy">
       </div>
       <div class="case-body">
         <span class="tag">Vacuum Casting</span>
-        <h3>Robot Gripper Fingers</h3>
-        <p class="specs">Material: PU Resin (Shore A80) &middot; Color-matched &middot; Overmolded inserts<br>Delivered in 10 days &middot; 50 units</p>
+        <h3>Electronics Housing</h3>
+        <p class="specs">Material: PU Resin (ABS-like) &middot; Color-matched &middot; 10-50 units per mold<br>Delivered in 10 days &middot; 30 units</p>
       </div>
     </div>
 
     <div class="case-card fade-in">
       <div class="case-img">
-        <img src="images/case-sls.jpg" alt="SLS Nylon Part - Drone Frame Component" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/case-sls.jpg" alt="SLS Nylon Part - Drone Frame Component" loading="lazy">
       </div>
       <div class="case-body">
         <span class="tag">SLS Printing</span>
@@ -394,7 +429,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
 
     <div class="case-card fade-in">
       <div class="case-img">
-        <img src="images/case-metal.jpg" alt="Metal 3D Print - Heat Exchanger Core" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/case-metal.jpg" alt="Metal 3D Print - Heat Exchanger Core" loading="lazy">
       </div>
       <div class="case-body">
         <span class="tag">Metal 3D Printing</span>
@@ -405,7 +440,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
 
     <div class="case-card fade-in">
       <div class="case-img">
-        <img src="images/case-injection.jpg" alt="Injection Mold Tool - Consumer Electronics" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/case-injection.jpg" alt="Injection Mold Tool - Consumer Electronics" loading="lazy">
       </div>
       <div class="case-body">
         <span class="tag">Injection Molding</span>
@@ -449,12 +484,80 @@ footer .logo .logo-icon{background:var(--blue-light)}
 </div>
 </section>
 
+<!-- ===== FAQ ===== -->
+<section id="faq">
+<div class="container">
+  <span class="section-label">FAQ</span>
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <p class="section-sub">Can't find your answer? <a href="#contact">Contact us</a> directly.</p>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What file formats do you accept?
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="faq-a">We accept STL, STEP, IGES, OBJ, and native CAD files (SolidWorks, Fusion 360, Inventor). If you only have a sketch or idea, our design team can help create the 3D model.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What is your minimum order quantity (MOQ)?
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="faq-a">For prototyping (3D printing, CNC), there is no MOQ &mdash; we can make 1 piece. For injection molding, the minimum is typically 100 units to justify tooling cost. Vacuum casting works well for 10-50 units.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How do you ensure quality?
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="faq-a">Every part is inspected before shipment. We provide photos of finished parts for approval. For critical dimensions, we can provide a detailed inspection report. Our tolerance standard is ISO 2768-mK.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What are your payment terms?
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="faq-a">Prototyping: 100% advance via PayPal or bank transfer. Production orders: 50% deposit, 50% before shipment. We accept PayPal, wire transfer (T/T), and letters of credit for large orders.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How long does shipping take?
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="faq-a">We ship via DHL, FedEx, or UPS. Typical delivery: 3-7 business days to US/EU/AU. Shipping cost is calculated based on weight and destination. We provide tracking numbers for all shipments.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Do you sign NDAs?
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="faq-a">Yes, we routinely sign NDAs (Non-Disclosure Agreements) to protect your intellectual property. Your designs and files are never shared with third parties.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can you help with design for manufacturability (DFM)?
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="faq-a">Absolutely. We review every design and provide DFM feedback free of charge. This includes suggesting better orientations, adjusting wall thickness, adding draft angles, and choosing the most cost-effective process.</div>
+    </div>
+
+  </div>
+</div>
+</section>
+
 <!-- ===== ABOUT ===== -->
 <section id="about">
 <div class="container">
   <div class="about-grid">
     <div class="fade-in">
-      <span class="section-label">About TrueMid</span>
+      <span class="section-label">About TrueMid Manufacturing</span>
       <h2 class="section-title">Precision Manufacturing. Global Delivery.</h2>
       <p>We are a China-based precision prototyping and manufacturing service provider, specializing in complex, high-quality parts that demand more than a standard 3D printing shop can deliver.</p>
       <p>Our team combines decades of hands-on manufacturing experience with the latest digital fabrication technologies. From a single SLA prototype to 10,000 injection-molded production units &mdash; we treat every order with the same rigor.</p>
@@ -467,7 +570,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
       </ul>
     </div>
     <div class="about-visual fade-in">
-      <img src="images/factory.jpg" alt="TrueMid Manufacturing Facility - Xian, China" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+      <img src="images/factory.jpg" alt="TrueMid Manufacturing Facility - Xian, China" loading="lazy">
     </div>
   </div>
 </div>
@@ -478,7 +581,8 @@ footer .logo .logo-icon{background:var(--blue-light)}
 <div class="container fade-in">
   <h2>Ready to Make Your Next Part?</h2>
   <p>Send us your files and get a detailed quote within 24 hours. Complex geometries, tight tolerances, challenging materials &mdash; we're ready.</p>
-  <a href="mailto:mawenbin9@gmail.com" class="btn btn-orange">Email Your Files &rarr;/a>
+  <a href="mailto:mawenbin9@gmail.com" class="btn btn-orange">Email Your Files</a>
+  <a href="https://wa.me/8615291861855" class="btn btn-white" style="margin-left:.5rem" target="_blank" rel="noopener">WhatsApp Us</a>
 </div>
 </section>
 
@@ -491,25 +595,26 @@ footer .logo .logo-icon{background:var(--blue-light)}
   <div class="contact-grid">
 
     <div class="contact-info fade-in">
-      <div class="contact-method"><span class="icon">&#128231;</span> <strong>Email:</strong> mawenbin9@gmail.com</div>
-      <div class="contact-method"><span class="icon">&#128172;</span> <strong>WhatsApp:</strong> +86 15291861855</div>
+      <div class="contact-method"><span class="icon">&#128231;</span> <strong>Email:</strong> <a href="mailto:mawenbin9@gmail.com">mawenbin9@gmail.com</a></div>
+      <div class="contact-method"><span class="icon">&#128172;</span> <strong>WhatsApp:</strong> <a href="https://wa.me/8615291861855" target="_blank" rel="noopener">+86 152-9186-1855</a></div>
       <div class="contact-method"><span class="icon">&#128336;</span> <strong>Hours:</strong> Mon-Sat, 9:00-18:00 (GMT+8)</div>
       <div class="contact-method"><span class="icon">&#128205;</span> <strong>Location:</strong> Xian, China</div>
       <p style="margin-top:1.5rem;font-size:.9rem;color:var(--gray-500)">Prefer to just email? Send your STL/STEP files directly to <strong>mawenbin9@gmail.com</strong> with a brief description. We'll reply with a quote.</p>
     </div>
 
-    <form class="fade-in" id="quoteForm" onsubmit="handleSubmit(event)">
+    <!-- Formspree form - TODO: replace FORM_ID with your actual Formspree ID after registering at formspree.io -->
+    <form class="fade-in" id="quoteForm" action="https://formspree.io/f/FORM_ID" method="POST">
       <div class="form-group">
         <label for="name">Your Name *</label>
-        <input type="text" id="name" required placeholder="John Smith">
+        <input type="text" id="name" name="name" required placeholder="John Smith">
       </div>
       <div class="form-group">
         <label for="email">Email *</label>
-        <input type="email" id="email" required placeholder="john@company.com">
+        <input type="email" id="email" name="email" required placeholder="john@company.com">
       </div>
       <div class="form-group">
         <label for="service">Service Needed</label>
-        <select id="service">
+        <select id="service" name="service">
           <option value="">Select a service...</option>
           <option>SLA 3D Printing</option>
           <option>FDM 3D Printing</option>
@@ -526,9 +631,9 @@ footer .logo .logo-icon{background:var(--blue-light)}
       </div>
       <div class="form-group">
         <label for="message">Project Description *</label>
-        <textarea id="message" required placeholder="Describe your project: material, quantity, dimensions, deadline, finish requirements..."></textarea>
+        <textarea id="message" name="message" required placeholder="Describe your project: material, quantity, dimensions, deadline, finish requirements..."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" style="width:100%">Send Request &rarr;/button>
+      <button type="submit" class="btn btn-primary" style="width:100%">Send Request &rarr;</button>
     </form>
 
   </div>
@@ -540,7 +645,7 @@ footer .logo .logo-icon{background:var(--blue-light)}
 <div class="container">
   <div class="footer-grid">
     <div>
-      <div class="logo"><span class="logo-icon">T</span> TrueMid</div>
+      <div class="logo"><span class="logo-icon">TM</span> TrueMid Manufacturing</div>
       <p style="color:rgba(255,255,255,.5)">Precision prototyping and manufacturing from China. We make the parts others can't.</p>
     </div>
     <div>
@@ -549,17 +654,22 @@ footer .logo .logo-icon{background:var(--blue-light)}
       <a href="#services">CNC Machining</a><br>
       <a href="#services">Vacuum Casting</a><br>
       <a href="#services">Injection Molding</a><br>
-      <a href="#services">All Services &rarr;/a>
+      <a href="#services">All Services &rarr;</a>
     </div>
     <div>
       <h4>Contact</h4>
       <a href="mailto:mawenbin9@gmail.com">mawenbin9@gmail.com</a><br>
+      <a href="https://wa.me/8615291861855" target="_blank" rel="noopener">WhatsApp</a><br>
       <a href="#contact">Request Quote</a><br>
       <a href="#how">How It Works</a>
     </div>
   </div>
   <div class="footer-bottom">
-    &copy; 2026 TrueMid. All rights reserved. | Precision Manufacturing from China
+    &copy; 2026 TrueMid Manufacturing. All rights reserved. | Precision Manufacturing from China
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
   </div>
 </div>
 </footer>
@@ -567,7 +677,30 @@ footer .logo .logo-icon{background:var(--blue-light)}
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
-<!-- ===== JS ===== -->
+<!-- ===== SCRIPTS ===== -->
+
+<!-- Google Analytics (GA4) - TODO: replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Tawk.to Live Chat - TODO: replace YOUR_PROPERTY_ID with your actual Tawk.to ID -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
 <script>
 // Mobile menu
 function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
@@ -588,14 +721,31 @@ window.addEventListener('scroll',()=>{
   document.querySelectorAll('nav a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current)});
 });
 
-// Form
-function handleSubmit(e){
-  e.preventDefault();
-  const toast=document.getElementById('toast');
-  toast.textContent='Message sent! We\'ll reply within 24 hours.';
-  toast.className='toast success show';
-  setTimeout(()=>toast.className='toast',3000);
-  e.target.reset();
+// Form submission to Formspree
+document.getElementById('quoteForm').addEventListener('submit', function(e) {
+  // Show success message after formspree redirect
+  if (window.location.search.includes('submitted=true')) {
+    const toast=document.getElementById('toast');
+    toast.textContent='Message sent! We\'ll reply within 24 hours.';
+    toast.className='toast success show';
+    setTimeout(()=>toast.className='toast',4000);
+  }
+});
+
+// FAQ toggle
+function toggleFaq(el) {
+  const answer = el.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-a').forEach(a => {a.classList.remove('open');a.style.maxHeight='0';a.style.padding='0 1.5rem'});
+  document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('active'));
+  // Open clicked
+  if (!isOpen) {
+    answer.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    answer.style.padding = '1rem 1.5rem';
+    el.classList.add('active');
+  }
 }
 
 // Animate bars on scroll
