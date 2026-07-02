@@ -159,12 +159,13 @@ nav .btn{padding:.55rem 1.3rem;font-size:.85rem}
 
 /* ===== FAQ ===== */
 .faq-list{max-width:800px;margin:0 auto}
-.faq-item{border:1px solid var(--gray-100);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
-.faq-item summary{background:var(--gray-50);padding:1rem 1.5rem;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;transition:background .2s;list-style:none}
+.faq-item{border:1px solid var(--gray-100);border-radius:var(--radius);margin-bottom:1rem}
+.faq-item summary{background:var(--gray-50);padding:1rem 1.5rem;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;transition:background .2s;list-style:none;border-radius:var(--radius) var(--radius) 0 0}
 .faq-item summary:hover{background:var(--blue-pale)}
 .faq-item summary::after{content:'\25BC';font-size:.8rem;transition:transform .3s}
 .faq-item[open] summary::after{transform:rotate(180deg)}
-.faq-item .faq-a{padding:1rem 1.5rem;color:var(--gray-700);font-size:.95rem}
+.faq-item[open] summary{border-radius:var(--radius) var(--radius) 0 0}
+.faq-item .faq-a{padding:1rem 1.5rem;color:var(--gray-700);font-size:.95rem;display:block}
 
 /* ===== WhatsApp Float ===== */
 .wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;align-items:center;gap:.6rem;background:#25D366;color:white;padding:.8rem 1.3rem;border-radius:50px;box-shadow:0 4px 16px rgba(37,211,102,.35);text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .2s}
