@@ -160,12 +160,11 @@ nav .btn{padding:.55rem 1.3rem;font-size:.85rem}
 /* ===== FAQ ===== */
 .faq-list{max-width:800px;margin:0 auto}
 .faq-item{border:1px solid var(--gray-100);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
-.faq-q{background:var(--gray-50);padding:1rem 1.5rem;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
-.faq-q:hover{background:var(--blue-pale)}
-.faq-q .arrow{transition:transform .3s;font-size:.8rem}
-.faq-q.active .arrow{transform:rotate(180deg)}
-.faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:all .3s ease;color:var(--gray-700);font-size:.95rem}
-.faq-a.open{padding:1rem 1.5rem;max-height:300px}
+.faq-item summary{background:var(--gray-50);padding:1rem 1.5rem;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;transition:background .2s;list-style:none}
+.faq-item summary:hover{background:var(--blue-pale)}
+.faq-item summary::after{content:'\25BC';font-size:.8rem;transition:transform .3s}
+.faq-item[open] summary::after{transform:rotate(180deg)}
+.faq-item .faq-a{padding:1rem 1.5rem;color:var(--gray-700);font-size:.95rem}
 
 /* ===== WhatsApp Float ===== */
 .wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;align-items:center;gap:.6rem;background:#25D366;color:white;padding:.8rem 1.3rem;border-radius:50px;box-shadow:0 4px 16px rgba(37,211,102,.35);text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .2s}
@@ -492,61 +491,40 @@ footer a:hover{color:var(--white)}
   <p class="section-sub">Can't find your answer? <a href="#contact">Contact us</a> directly.</p>
   <div class="faq-list">
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        What file formats do you accept?
-        <span class="arrow">&#9660;</span>
-      </div>
+    <details class="faq-item">
+      <summary class="faq-q">What file formats do you accept?</summary>
       <div class="faq-a">We accept STL, STEP, IGES, OBJ, and native CAD files (SolidWorks, Fusion 360, Inventor). If you only have a sketch or idea, our design team can help create the 3D model.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        What is your minimum order quantity (MOQ)?
-        <span class="arrow">&#9660;</span>
-      </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is your minimum order quantity (MOQ)?</summary>
       <div class="faq-a">For prototyping (3D printing, CNC), there is no MOQ &mdash; we can make 1 piece. For injection molding, the minimum is typically 100 units to justify tooling cost. Vacuum casting works well for 10-50 units.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        How do you ensure quality?
-        <span class="arrow">&#9660;</span>
-      </div>
+    <details class="faq-item">
+      <summary class="faq-q">How do you ensure quality?</summary>
       <div class="faq-a">Every part is inspected before shipment. We provide photos of finished parts for approval. For critical dimensions, we can provide a detailed inspection report. Our tolerance standard is ISO 2768-mK.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        What are your payment terms?
-        <span class="arrow">&#9660;</span>
-      </div>
+    <details class="faq-item">
+      <summary class="faq-q">What are your payment terms?</summary>
       <div class="faq-a">Prototyping: 100% advance via PayPal or bank transfer. Production orders: 50% deposit, 50% before shipment. We accept PayPal, wire transfer (T/T), and letters of credit for large orders.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        How long does shipping take?
-        <span class="arrow">&#9660;</span>
-      </div>
+    <details class="faq-item">
+      <summary class="faq-q">How long does shipping take?</summary>
       <div class="faq-a">We ship via DHL, FedEx, or UPS. Typical delivery: 3-7 business days to US/EU/AU. Shipping cost is calculated based on weight and destination. We provide tracking numbers for all shipments.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Do you sign NDAs?
-        <span class="arrow">&#9660;</span>
-      </div>
+    <details class="faq-item">
+      <summary class="faq-q">Do you sign NDAs?</summary>
       <div class="faq-a">Yes, we routinely sign NDAs (Non-Disclosure Agreements) to protect your intellectual property. Your designs and files are never shared with third parties.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        Can you help with design for manufacturability (DFM)?
-        <span class="arrow">&#9660;</span>
-      </div>
+    <details class="faq-item">
+      <summary class="faq-q">Can you help with design for manufacturability (DFM)?</summary>
       <div class="faq-a">Absolutely. We review every design and provide DFM feedback free of charge. This includes suggesting better orientations, adjusting wall thickness, adding draft angles, and choosing the most cost-effective process.</div>
-    </div>
+    </details>
 
   </div>
 </div>
@@ -724,22 +702,6 @@ document.getElementById('quoteForm').addEventListener('submit', function(e) {
     setTimeout(()=>toast.className='toast',4000);
   }
 });
-
-// FAQ toggle
-function toggleFaq(el) {
-  const answer = el.nextElementSibling;
-  const isOpen = answer.classList.contains('open');
-  // Close all
-  document.querySelectorAll('.faq-a').forEach(a => {a.classList.remove('open');a.style.maxHeight='0';a.style.padding='0 1.5rem'});
-  document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('active'));
-  // Open clicked
-  if (!isOpen) {
-    answer.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-    answer.style.padding = '1rem 1.5rem';
-    el.classList.add('active');
-  }
-}
 
 // Animate bars on scroll
 const barObserver=new IntersectionObserver((e)=>{e.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.cap-bar-fill').forEach(b=>{b.style.width=b.style.width});barObserver.unobserve(e.target)}})},{threshold:0.3});
