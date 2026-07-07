@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mawenbin9.github.io/truemid-website/sitemap.xml
