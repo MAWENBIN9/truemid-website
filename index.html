@@ -486,15 +486,6 @@
 
 <!-- ===== SCRIPTS ===== -->
 
-<!-- Google Analytics (GA4) - TODO: replace G-CENSR6CBB0 with your Measurement ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CENSR6CBB0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CENSR6CBB0');
-</script>
-
 <script>
 // Mobile menu
 function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
@@ -513,17 +504,6 @@ window.addEventListener('scroll',()=>{
   let current='';
   sections.forEach(s=>{const top=s.offsetTop-100;if(window.scrollY>=top)current=s.getAttribute('id')});
   document.querySelectorAll('nav a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current)});
-});
-
-// Form submission to Formspree
-document.getElementById('quoteForm').addEventListener('submit', function(e) {
-  // Show success message after formspree redirect
-  if (window.location.search.includes('submitted=true')) {
-    const toast=document.getElementById('toast');
-    toast.textContent='Message sent! We\'ll reply within 24 hours.';
-    toast.className='toast success show';
-    setTimeout(()=>toast.className='toast',4000);
-  }
 });
 
 // Animate bars on scroll
@@ -635,5 +615,7 @@ s0.parentNode.insertBefore(s1,s0);
 }
 </script>
 
+
+<script src="assets/analytics.js"></script>
 </body>
 </html>
