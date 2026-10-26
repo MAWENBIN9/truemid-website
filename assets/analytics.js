@@ -151,9 +151,7 @@
         if (res.ok) {
           tmEvent('generate_lead', {
             service_type: service,
-            form_location: 'homepage_contact',
-            value: 1,
-            currency: 'USD'
+            form_location: 'homepage_contact'
           });
           showToast("Sent successfully! We'll reply within 24 hours.", 'success');
           form.reset();
