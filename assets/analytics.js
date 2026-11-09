@@ -153,7 +153,7 @@
             service_type: service,
             form_location: 'homepage_contact'
           });
-          showToast("Sent successfully! We'll reply within 12 hours.", 'success');
+          showToast("Sent successfully! We'll reply within 24 hours.", 'success');
           form.reset();
         } else {
           return res.json().then(function (data) {
