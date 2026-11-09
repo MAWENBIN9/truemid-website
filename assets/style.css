@@ -55,6 +55,8 @@ header.scrolled{box-shadow:var(--shadow-sm)}
 nav{display:flex;align-items:center;gap:2rem}
 nav a{color:var(--gray-700);font-weight:500;font-size:.9rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:all .2s}
 nav a:hover,nav a.active{color:var(--blue);border-bottom-color:var(--blue)}
+nav a.nav-contact{color:var(--gray-500);font-size:.82rem;font-weight:600;white-space:nowrap}
+nav a.nav-contact:hover{color:var(--blue);border-bottom-color:var(--blue)}
 nav .btn{padding:.55rem 1.3rem;font-size:.85rem}
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;flex-direction:column;gap:5px}
 .menu-toggle span{display:block;width:24px;height:2.5px;background:var(--gray-900);border-radius:2px;transition:all .3s}
